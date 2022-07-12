@@ -1,17 +1,9 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:lts-buster-slim'
-            args '-p 3000:3000'
-        }
-    }
-    environment {
-        CI = 'true'
-    }
+    agent {label "linux"}
     stages {
-        stage('Build') {
+        stage("Validate Files") {
             steps {
-                sh 'npm install'
+                echo "Hello"
             }
         }
     }
